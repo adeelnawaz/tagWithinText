@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>autocomplete demo</title>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script src="tagWithinText.js"></script>
+    </head>
+    <body>
+        <label for="autocomplete">
+            Select a programming language:<br/>
+            from "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"
+        </label>
+        <br/>
+        <label>Textarea:</label>
+        <br/>
+        <textarea class="autocomplete"></textarea>
+        <br/>
+        <br/>
+        <label>Div:</label>
+        <br/>
+        <div class="autocomplete" contenteditable="true"><span>bla</span> bla</div>
+        <style>
+            .autocomplete{
+                width:200px;
+                height: 100px;
+                border: 1px solid #ccc;
+            }
+            .tag{
+                background: #ddd;
+            }
+        </style>
+        <script>
+            $('.autocomplete').tagWithinText({
+                source: [
+                    {"label":"c++", "value":"<span class='tag'>c++</span>"},
+                    {"label":"java", "value":"<span class='tag'>java</span>"},
+                    {"label":"php", "value":"<span class='tag'>php</span>"},
+                    {"label":"coldfusion", "value":"<span class='tag'>coldfusion</span>"},
+                    {"label":"javascript", "value":"<span class='tag'>javascript</span>"},
+                    {"label":"asp", "value":"<span class='tag'>asp</span>"},
+                    {"label":"ruby", "value":"<span class='tag'>ruby</span>"}
+                ]
+            });
+        </script>
+    </body>
+</html>
